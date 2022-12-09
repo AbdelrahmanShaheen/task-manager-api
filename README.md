@@ -45,8 +45,8 @@ Made using nodejs ,express ,mongodb and mongoose.
 | `DELETE`    | `/tasks/:id`   |`private`       | `Delete a task by id`
 
 ### Database Schema
+![Untitled Diagram drawio (3)](https://user-images.githubusercontent.com/77184432/206690286-ef2c2246-0746-4390-8311-b93a2ad345bc.png)
 
-![DB Schema](![Untitled Diagram drawio (3)](https://user-images.githubusercontent.com/77184432/206689802-31b68661-300f-42fa-b319-7b347727dea1.png)
 
 ### Installation
 
