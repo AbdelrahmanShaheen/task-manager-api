@@ -5,20 +5,20 @@ Made using nodejs ,express ,mongodb and mongoose.
 
 ### Project structure
     .
-    ¦   package.json
+    Â¦   package.json
     +---src
         +-- index.js
-        ¦
+        Â¦
         +---db
-        ¦   +-- mongoose.js
-        ¦
+        Â¦   +-- mongoose.js
+        Â¦
         +---middleware
-        ¦   +-- uauth.js
-        ¦
+        Â¦   +-- uauth.js
+        Â¦
         +---models
-        ¦   +-- task.js
-        ¦   +-- user.js
-        ¦
+        Â¦   +-- task.js
+        Â¦   +-- user.js
+        Â¦
         +---routers
             +--  task.js
             +--  user.js
@@ -46,7 +46,7 @@ Made using nodejs ,express ,mongodb and mongoose.
 
 ### Database Schema
 
-![DB Schema]()
+![DB Schema](![Untitled Diagram drawio (3)](https://user-images.githubusercontent.com/77184432/206689802-31b68661-300f-42fa-b319-7b347727dea1.png)
 
 ### Installation
 
