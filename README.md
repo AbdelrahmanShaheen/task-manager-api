@@ -44,6 +44,10 @@ Made using nodejs ,express ,mongodb and mongoose.
 | `PATCH`     |`/tasks/:id`|`private`       | `Update a task by id`
 | `DELETE`    | `/tasks/:id`   |`private`       | `Delete a task by id`
 
+### Authentication and Security
+- Hash encryption of passwords and access management with JWT tokens.
+- Restricted user access to CRUD operations based on JWT tokens.
+
 ### Database Schema
 ![Untitled Diagram drawio (3)](https://user-images.githubusercontent.com/77184432/206690286-ef2c2246-0746-4390-8311-b93a2ad345bc.png)
 
