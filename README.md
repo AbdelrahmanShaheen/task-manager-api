@@ -9,7 +9,7 @@ Made using nodejs ,express ,mongodb and mongoose.
 
 <details>
 <summary>Click to expand!</summary>
-```bash
+```
 ## Project Structure
     .
     ¦   package.json
