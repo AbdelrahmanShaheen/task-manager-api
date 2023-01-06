@@ -91,6 +91,7 @@ router.delete("/users/me", auth, async (req, res) => {
     res.status(500).send();
   }
 });
+//file upload config
 const upload = multer({
   limits: {
     fileSize: 1000000,
@@ -102,6 +103,7 @@ const upload = multer({
     cb(undefined, true);
   },
 });
+//........................................................
 // Creating/updating an avatar(image) to the current user :
 router.post(
   "/users/me/avatar",
