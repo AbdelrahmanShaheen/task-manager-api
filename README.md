@@ -13,24 +13,20 @@ Made using nodejs ,express ,mongodb and mongoose.
 ```bash
 ## Project Structure
 
-    .
-    ¦   package.json
-    +---src
-        +-- index.js
-        ¦
-        +---db
-        ¦   +-- mongoose.js
-        ¦
-        +---middleware
-        ¦   +-- uauth.js
-        ¦
-        +---models
-        ¦   +-- task.js
-        ¦   +-- user.js
-        ¦
-        +---routers
-            +--  task.js
-            +--  user.js
+📦src
+ ┣ 📂db
+ ┃ ┗ 📜mongoose.js
+ ┣ 📂emails
+ ┃ ┗ 📜account.js
+ ┣ 📂middleware
+ ┃ ┗ 📜auth.js
+ ┣ 📂models
+ ┃ ┣ 📜task.js
+ ┃ ┗ 📜user.js
+ ┣ 📂routers
+ ┃ ┣ 📜task.js
+ ┃ ┗ 📜user.js
+ ┗ 📜index.js
 ```
 
 </details>
