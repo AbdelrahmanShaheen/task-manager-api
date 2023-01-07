@@ -312,11 +312,9 @@ Response
 | :-------------- | :------- | :-------------------------------------- |
 | `Authorization` | `string` | **Required**. Bearer token of the user. |
 
-#### choose one of these params to update the user
-
-| Body   | Type   | Description |
-| :----- | :----- | :---------- |
-| `todo` | `todo` | todo        |
+| Body     | Type     | Description             |
+| :------- | :------- | :---------------------- |
+| `avatar` | `Buffer` | Profile picture of user |
 
 <details>
 <summary>
@@ -343,6 +341,41 @@ Response
 </summary>
 
 there is no response ,just a status code of `200 ok`
+
+</details>
+
+### Task Resource
+
+#### User create task
+
+```http
+  POST /tasks
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+| Body        | Type      | Description                           |
+| :---------- | :-------- | :------------------------------------ |
+| `desc`      | `string`  | **Required**. Description of the task |
+| `completed` | `boolean` | **Optional**. Completed task ?        |
+
+<details>
+<summary>
+Response
+</summary>
+```json
+{
+    "desc": "task5",
+    "completed": true,
+    "owner": "63b8d8ca722926efe8081a19",
+    "_id": "63b9ad67a9d16231fe7f172d",
+    "createdAt": "2023-01-07T17:35:35.628Z",
+    "updatedAt": "2023-01-07T17:35:35.628Z",
+    "__v": 0
+}
+```
 
 </details>
 
