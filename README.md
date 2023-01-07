@@ -168,6 +168,40 @@ Response
 
 </details>
 
+#### User logout
+
+```http
+  POST /users/logout
+```
+
+| Headers         | Type     | Description                              |
+| :-------------- | :------- | :--------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the Admin. |
+
+<details>
+<summary>
+Response
+</summary>
+there is no response ,just a status code of ```200 ok```
+</details>
+
+#### User logout from all sessions
+
+```http
+  POST /users/logoutAll
+```
+
+| Headers         | Type     | Description                              |
+| :-------------- | :------- | :--------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the Admin. |
+
+<details>
+<summary>
+Response
+</summary>
+there is no response ,just a status code of ```200 ok```
+</details>
+
 ## Database Schema
 
 <details>
