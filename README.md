@@ -186,6 +186,7 @@ there is no response ,just a status code of \
 ```json
 200 ok
 ```
+
 </details>
 
 #### User logout from all sessions
@@ -206,6 +207,7 @@ there is no response ,just a status code of
 ```json 
 200 ok
 ```
+
 </details>
 
 ## Database Schema
