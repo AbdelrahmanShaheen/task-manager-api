@@ -202,7 +202,7 @@ there is no response ,just a status code of \
 <summary>
 Response
 </summary>
-there is no response ,just a status code of `200 OK`
+there is no response ,just a status code of `OK`
 </details>
 
 ## Database Schema
