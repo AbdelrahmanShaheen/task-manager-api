@@ -209,7 +209,7 @@ there is no response ,just a status code of `200 ok`
 #### Delete user
 
 ```http
-  DELETE /user
+  DELETE /users/me
 ```
 
 | Headers         | Type     | Description                             |
