@@ -1,17 +1,15 @@
 const nodemailer = require("nodemailer");
-const passApp = "qzuwbrswdbdgeyaq";
-const sender = "shaheenabdelrahman28@gmail.com";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: sender,
-    pass: passApp,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
   },
 });
 const sendWelcomeEmail = (name, email) => {
   transporter.sendMail({
     to: email,
-    from: sender,
+    from: process.env.EMAIL_USER,
     subject: "Thanks for joining in",
     text: `Welcome to the app, ${name}. Let me know how you get along with the app.`,
   });
@@ -19,7 +17,7 @@ const sendWelcomeEmail = (name, email) => {
 const sendCancelationEmail = (email, name) => {
   transporter.sendMail({
     to: email,
-    from: sender,
+    from: process.env.EMAIL_USER,
     subject: "Sorry to see you go!",
     text: `Goodbye, ${name}. I hope to see you back sometime soon.`,
   });
