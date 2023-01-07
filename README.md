@@ -174,9 +174,9 @@ Response
   POST /users/logout
 ```
 
-| Headers         | Type     | Description                              |
-| :-------------- | :------- | :--------------------------------------- |
-| `Authorization` | `string` | **Required**. Bearer token of the Admin. |
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
 
 <details>
 <summary>
@@ -193,9 +193,149 @@ there is no response ,just a status code of `200 ok`
   POST /users/logoutAll
 ```
 
-| Headers         | Type     | Description                              |
-| :-------------- | :------- | :--------------------------------------- |
-| `Authorization` | `string` | **Required**. Bearer token of the Admin. |
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+<details>
+<summary>
+Response
+</summary>
+
+there is no response ,just a status code of `200 ok`
+
+</details>
+
+#### Delete user
+
+```http
+  DELETE /user
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+<details>
+<summary>
+Response
+</summary>
+
+```json
+{
+  "_id": "63b8cd729178f65a77902b38",
+  "name": "Abdelrahman",
+  "age": 0,
+  "email": "shaheen@gmail.com",
+  "createdAt": "2023-01-07T01:40:02.474Z",
+  "updatedAt": "2023-01-07T02:24:40.306Z",
+  "__v": 5
+}
+```
+
+</details>
+
+#### User get profile info
+
+```http
+  GET /users/me
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+<details>
+<summary>
+Response
+</summary>
+
+```json
+{
+  "_id": "63b8d8ca722926efe8081a19",
+  "name": "Abdelrahman",
+  "age": 0,
+  "email": "shaheenabdelrahman28@gmail.com",
+  "createdAt": "2023-01-07T02:28:27.120Z",
+  "updatedAt": "2023-01-07T02:28:27.120Z",
+  "__v": 0
+}
+```
+
+</details>
+
+#### User update profile info
+
+```http
+  PATCH /users/me
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+#### choose one of these params to update the user
+
+| Body       | Type     | Description          |
+| :--------- | :------- | :------------------- |
+| `name`     | `string` | name of user         |
+| `age`      | `string` | age of the user      |
+| `email`    | `string` | email of user        |
+| `password` | `string` | password of the user |
+
+<details>
+<summary>
+Response
+</summary>
+
+```json
+{
+  "_id": "63b8d8ca722926efe8081a19",
+  "name": "abdo",
+  "age": 23,
+  "email": "shaheenabdelrahman28@gmail.com",
+  "createdAt": "2023-01-07T02:28:27.120Z",
+  "updatedAt": "2023-01-07T02:35:03.285Z",
+  "__v": 0
+}
+```
+
+</details>
+
+#### User upload/update a profile picture
+
+```http
+  POST /users/me/avatar
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+#### choose one of these params to update the user
+
+| Body   | Type   | Description |
+| :----- | :----- | :---------- |
+| `todo` | `todo` | todo        |
+
+<details>
+<summary>
+Response
+</summary>
+
+there is no response ,just a status code of `200 ok`
+
+</details>
+
+#### Delete user profile picture
+
+```http
+  DELETE /users/me/avatar
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
 
 <details>
 <summary>
