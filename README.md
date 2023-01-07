@@ -182,7 +182,10 @@ Response
 <summary>
 Response
 </summary>
-there is no response ,just a status code of `200 ok`
+there is no response ,just a status code of 
+```json
+200 ok
+```
 </details>
 
 #### User logout from all sessions
@@ -200,7 +203,9 @@ there is no response ,just a status code of `200 ok`
 Response
 </summary>
 there is no response ,just a status code of 
-`200 ok`
+```json
+200 ok
+```
 </details>
 
 ## Database Schema
