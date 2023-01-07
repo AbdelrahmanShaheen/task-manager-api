@@ -636,6 +636,10 @@ Response
 | :-------------- | :------- | :-------------------------------------- |
 | `Authorization` | `string` | **Required**. Bearer token of the user. |
 
+| Parameter | Type     | Description                   |
+| :-------- | :------- | :---------------------------- |
+| `id`      | `string` | **Required**. ID of the task. |
+
 #### choose one of these params to update the task
 
 | Body        | Type      | Description             |
@@ -671,6 +675,10 @@ Response
 | Headers         | Type     | Description                             |
 | :-------------- | :------- | :-------------------------------------- |
 | `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+| Parameter | Type     | Description                   |
+| :-------- | :------- | :---------------------------- |
+| `id`      | `string` | **Required**. ID of the task. |
 
 <details>
 <summary>
