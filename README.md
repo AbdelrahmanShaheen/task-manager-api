@@ -713,7 +713,7 @@ Response
 Install my-project with npm
 
 ```bash
-> git clone https://github.com/AbdelrahmanShaheen/task-manager-api`
+> git clone https://github.com/AbdelrahmanShaheen/task-manager-api
 > cd task-manager-api/
 > npm install
 ```
@@ -749,9 +749,26 @@ To run this project, you will need to add the following environment variables to
 
 `EMAIL_USER`
 
+## Tech/Framework used 🧰
+
+- [Redux](https://redux.js.org/)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose](https://mongoosejs.com/)
+- [Jest](https://jestjs.io/)
+- [Swagger](https://swagger.io/)
+- [Git](https://git-scm.com/)
+- [NodeMailer](https://nodemailer.com/about/)
+- [Handlebars](https://handlebarsjs.com/)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+- [Postman](https://www.postman.com/)
+- [VSCode](https://code.visualstudio.com/)
+
 ## To do
 
 - [x] Provide Sorting, Pagination, and Filtering on the data.
 - [x] Set up email notifications using a nodemailer service.
 - [x] Allow users to upload a profile picture.
 - [ ] Do automation testing using Jest framework
+- [ ] Add swagger UI
