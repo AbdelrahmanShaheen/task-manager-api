@@ -365,17 +365,228 @@ there is no response ,just a status code of `200 ok`
 <summary>
 Response
 </summary>
-
 ```json
 {
-  "desc": "task5",
-  "completed": true,
-  "owner": "63b8d8ca722926efe8081a19",
-  "_id": "63b9ad67a9d16231fe7f172d",
-  "createdAt": "2023-01-07T17:35:35.628Z",
-  "updatedAt": "2023-01-07T17:35:35.628Z",
-  "__v": 0
+    "desc": "task5",
+    "completed": true,
+    "owner": "63b8d8ca722926efe8081a19",
+    "_id": "63b9ad67a9d16231fe7f172d",
+    "createdAt": "2023-01-07T17:35:35.628Z",
+    "updatedAt": "2023-01-07T17:35:35.628Z",
+    "__v": 0
 }
+```
+
+</details>
+
+#### User get his tasks
+
+```http
+  GET /tasks
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+#### choose any combination of these params to search for tasks
+
+| Parameter   | Type      | Description                                                      |
+| :---------- | :-------- | :--------------------------------------------------------------- |
+| `completed` | `boolean` | **Optional**. Completed task ?                                   |
+| `limit`     | `number`  | **Optional**. Maximum number of tasks to get.                    |
+| `skip`      | `number`  | **Optional**. Get tasks after the 1th 'skip number' th of tasks. |
+| `sortBy`    | `string`  | **Optional**. Sort tasks in a specific order.                    |
+
+Example URL: Get all completed tasks.
+
+```http
+GET /tasks?completed=true
+```
+
+<details>
+
+<summary>
+Response
+</summary>
+
+```json
+[
+  {
+    "_id": "63b9ad60a9d16231fe7f1729",
+    "desc": "task4",
+    "completed": true,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:35:28.938Z",
+    "updatedAt": "2023-01-07T17:35:28.938Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad67a9d16231fe7f172d",
+    "desc": "task5",
+    "completed": true,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:35:35.628Z",
+    "updatedAt": "2023-01-07T17:35:35.628Z",
+    "__v": 0
+  }
+]
+```
+
+</details>
+
+Example URL: Get all uncompleted tasks.
+
+```http
+GET /tasks?completed=false
+```
+
+<details>
+
+<summary>
+Response
+</summary>
+
+```json
+[
+  {
+    "_id": "63b9ad31a9d16231fe7f171d",
+    "desc": "task1",
+    "completed": false,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:34:41.112Z",
+    "updatedAt": "2023-01-07T17:34:41.112Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad35a9d16231fe7f1721",
+    "desc": "task2",
+    "completed": false,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:34:45.874Z",
+    "updatedAt": "2023-01-07T17:34:45.874Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad3aa9d16231fe7f1725",
+    "desc": "task3",
+    "completed": false,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:34:50.717Z",
+    "updatedAt": "2023-01-07T17:34:50.717Z",
+    "__v": 0
+  }
+]
+```
+
+</details>
+
+Example URL: Get 3 tasks after the 1th two tasks.
+
+```http
+GET /tasks?limit=3&skip=2
+```
+
+<details>
+
+<summary>
+Response
+</summary>
+
+```json
+[
+  {
+    "_id": "63b9ad3aa9d16231fe7f1725",
+    "desc": "task3",
+    "completed": false,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:34:50.717Z",
+    "updatedAt": "2023-01-07T17:34:50.717Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad60a9d16231fe7f1729",
+    "desc": "task4",
+    "completed": true,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:35:28.938Z",
+    "updatedAt": "2023-01-07T17:35:28.938Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad67a9d16231fe7f172d",
+    "desc": "task5",
+    "completed": true,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:35:35.628Z",
+    "updatedAt": "2023-01-07T17:35:35.628Z",
+    "__v": 0
+  }
+]
+```
+
+</details>
+
+Example URL: Get all tasks in desc order of their creation time.
+
+```http
+GET /tasks?sortBy=createdAt:desc
+```
+
+<details>
+
+<summary>
+Response
+</summary>
+
+```json
+[
+  {
+    "_id": "63b9ad67a9d16231fe7f172d",
+    "desc": "task5",
+    "completed": true,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:35:35.628Z",
+    "updatedAt": "2023-01-07T17:35:35.628Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad60a9d16231fe7f1729",
+    "desc": "task4",
+    "completed": true,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:35:28.938Z",
+    "updatedAt": "2023-01-07T17:35:28.938Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad3aa9d16231fe7f1725",
+    "desc": "task3",
+    "completed": false,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:34:50.717Z",
+    "updatedAt": "2023-01-07T17:34:50.717Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad35a9d16231fe7f1721",
+    "desc": "task2",
+    "completed": false,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:34:45.874Z",
+    "updatedAt": "2023-01-07T17:34:45.874Z",
+    "__v": 0
+  },
+  {
+    "_id": "63b9ad31a9d16231fe7f171d",
+    "desc": "task1",
+    "completed": false,
+    "owner": "63b8d8ca722926efe8081a19",
+    "createdAt": "2023-01-07T17:34:41.112Z",
+    "updatedAt": "2023-01-07T17:34:41.112Z",
+    "__v": 0
+  }
+]
 ```
 
 </details>
