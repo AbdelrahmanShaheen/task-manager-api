@@ -592,6 +592,105 @@ Response
 
 </details>
 
+### Get a single task by id
+
+```http
+GET /tasks/:id
+```
+
+| Headers         | Type     | Description                                |
+| :-------------- | :------- | :----------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the trainee. |
+
+| Parameter | Type     | Description                   |
+| :-------- | :------- | :---------------------------- |
+| `id`      | `string` | **Required**. ID of the task. |
+
+<details>
+
+<summary>
+Response
+</summary>
+
+```json
+{
+  "_id": "63b9ad3aa9d16231fe7f1725",
+  "desc": "task3",
+  "completed": false,
+  "owner": "63b8d8ca722926efe8081a19",
+  "createdAt": "2023-01-07T17:34:50.717Z",
+  "updatedAt": "2023-01-07T17:34:50.717Z",
+  "__v": 0
+}
+```
+
+</details>
+
+### Update a single task by id
+
+```http
+  PATCH /tasks/:id
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+#### choose one of these params to update the task
+
+| Body        | Type      | Description             |
+| :---------- | :-------- | :---------------------- |
+| `desc`      | `string`  | Description of the task |
+| `completed` | `boolean` | Completed task ?        |
+
+<details>
+<summary>
+Response
+</summary>
+
+```json
+{
+  "_id": "63b9ad3aa9d16231fe7f1725",
+  "desc": "task3",
+  "completed": true,
+  "owner": "63b8d8ca722926efe8081a19",
+  "createdAt": "2023-01-07T17:34:50.717Z",
+  "updatedAt": "2023-01-07T19:00:34.752Z",
+  "__v": 0
+}
+```
+
+</details>
+
+### Delete single task by id
+
+```http
+  DELETE /tasks/:id
+```
+
+| Headers         | Type     | Description                             |
+| :-------------- | :------- | :-------------------------------------- |
+| `Authorization` | `string` | **Required**. Bearer token of the user. |
+
+<details>
+<summary>
+Response
+</summary>
+
+```json
+{
+  "_id": "63b9ad3aa9d16231fe7f1725",
+  "desc": "task3",
+  "completed": true,
+  "owner": "63b8d8ca722926efe8081a19",
+  "createdAt": "2023-01-07T17:34:50.717Z",
+  "updatedAt": "2023-01-07T19:00:34.752Z",
+  "__v": 0
+}
+```
+
+</details>
+
 ## Database Schema
 
 <details>
