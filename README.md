@@ -708,12 +708,46 @@ Response
 
 </details>
 
-## Installation
+## Installation 📥
 
-1. Download the repo or do this: `git clone https://github.com/AbdelrahmanShaheen/Weather-app`
-2. Go to Weather-app folder
-3. Install all the dependencies using the following command: `npm install`
-4. Run the application using the following command : `npm run start`
+Install my-project with npm
+
+```bash
+> git clone https://github.com/AbdelrahmanShaheen/task-manager-api`
+> cd task-manager-api/
+> npm install
+```
+
+## How to use
+
+use the scripts in package.json
+
+```bash
+> npm run start
+or
+> npm run dev
+```
+
+or
+
+```bash
+> node src/index.js
+or
+> env-cmd -f ./config/dev.env nodemon src/index.js
+```
+
+the backend server will be running on the specified port on your env files.
+
+### Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+`MONGODB_URL`
+
+`JWT_SECRET`
+
+`EMAIL_PASSWORD`
+
+`EMAIL_USER`
 
 ## To do
 
