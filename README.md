@@ -199,7 +199,7 @@ there is no response ,just a status code of ```200 ok```
 <summary>
 Response
 </summary>
-there is no response ,just a status code of ```200 ok```
+there is no response ,just a status code of ``` 200 ok ```
 </details>
 
 ## Database Schema
