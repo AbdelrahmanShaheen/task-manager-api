@@ -33,7 +33,7 @@ As a user you can do the following :
 - Hash encryption of passwords and access management with JWT tokens.
 - Restricted user access to CRUD operations based on JWT tokens.
 
-### Project structure
+## Project structure
 
 <details>
 <summary>Click to expand!</summary>
@@ -61,7 +61,7 @@ As a user you can do the following :
 
 </details>
 
-### API Endpoints
+## API Endpoints
 
 #### for users
 
@@ -168,7 +168,7 @@ Response
 
 </details>
 
-### Database Schema
+## Database Schema
 
 <details>
 <summary>Diagram</summary>
@@ -177,14 +177,14 @@ Response
 
 </details>
 
-### Installation
+## Installation
 
 1. Download the repo or do this: `git clone https://github.com/AbdelrahmanShaheen/Weather-app`
 2. Go to Weather-app folder
 3. Install all the dependencies using the following command: `npm install`
 4. Run the application using the following command : `npm run start`
 
-### To do
+## To do
 
 - [x] Provide Sorting, Pagination, and Filtering on the data.
 - [x] Set up email notifications using a nodemailer service.
