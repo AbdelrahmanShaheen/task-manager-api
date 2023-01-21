@@ -758,7 +758,7 @@ The testing is done using `jest`. To run the tests, run the following command
 > npm run test
 ```
 
-![testing](https://user-images.githubusercontent.com/77184432 213866325-b0e02f1e-a4df-444e-af0a-070d4339502f.png)
+![testing](https://user-images.githubusercontent.com/77184432213866325-b0e02f1e-a4df-444e-af0a-070d4339502f.png)
 
 ### Tests Structure
 
@@ -801,5 +801,5 @@ The testing is done using `jest`. To run the tests, run the following command
 - [x] Provide Sorting, Pagination, and Filtering on the data.
 - [x] Set up email notifications using a nodemailer service.
 - [x] Allow users to upload a profile picture.
-- [ ] Do automation testing using Jest framework
+- [x] Do automation testing using Jest framework
 - [ ] Add swagger UI
