@@ -788,6 +788,7 @@ The testing is done using `jest`. To run the tests, run the following command
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
 - [Jest](https://jestjs.io/)
+- [supertest](https://www.npmjs.com/package/supertest)
 - [Swagger](https://swagger.io/)
 - [Git](https://git-scm.com/)
 - [NodeMailer](https://nodemailer.com/about/)
