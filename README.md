@@ -757,7 +757,7 @@ The testing is done using `jest`. To run the tests, run the following command
 ```bash
 > npm run test
 ```
-![testing3](https://user-images.githubusercontent.com/77184432/213866559-5d0205e0-29e6-4b3b-929f-63d9dbc7b266.png)
+![ss1](https://user-images.githubusercontent.com/77184432/213866623-9fa50c5b-641b-4485-af36-df8400ddd533.png)
 
 
 ### Tests Structure
