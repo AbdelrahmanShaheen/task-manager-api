@@ -750,6 +750,36 @@ To run this project, you will need to add the following environment variables to
 
 `EMAIL_USER`
 
+## Running Tests 🧪
+
+The testing is done using `jest`. To run the tests, run the following command
+
+```bash
+> npm run test
+```
+
+![testing](https://user-images.githubusercontent.com/77184432 213866325-b0e02f1e-a4df-444e-af0a-070d4339502f.png)
+
+### Tests Structure
+
+<details>
+<summary> Click Me! </summary>
+
+```bash
+
+📦tests
+ ┣ 📂fixtures
+ ┃ ┣ 📜db.js
+ ┃ ┗ 📜profile-pic.jpg
+ ┣ 📂__mocks__
+ ┃ ┗ 📜nodemailer.js
+ ┣ 📜task.test.js
+ ┗ 📜user.test.js
+
+```
+
+</details>
+
 ## Tech/Framework used 🧰
 
 - [Redux](https://redux.js.org/)
