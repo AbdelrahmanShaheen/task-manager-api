@@ -98,9 +98,9 @@ userSchema.pre(
   { document: true, query: false },
   async function (next) {
     const user = this;
-    console.log(user._id);
+    // console.log(user._id);
     await Task.deleteMany({ owner: user._id });
-    console.log("remove tasks");
+    // console.log("remove tasks");
     next();
   }
 );
@@ -109,8 +109,8 @@ userSchema.pre("save", async function (next) {
   const user = this;
   if (user.isModified("password"))
     user.password = await bycript.hash(user.password, 8);
-  console.log(user);
-  console.log(`just before saving!`);
+  // console.log(user);
+  // console.log(`just before saving!`);
   next();
 });
 
