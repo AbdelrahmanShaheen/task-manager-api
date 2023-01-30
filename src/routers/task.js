@@ -10,6 +10,7 @@ router.post("/tasks", auth, async (req, res) => {
     owner: req.user._id,
   });
   try {
+    console.log("Create task route on");
     await task.save();
     res.status(201).send(task);
   } catch (error) {
@@ -25,6 +26,7 @@ router.post("/tasks", auth, async (req, res) => {
 // GET /tasks?sortBy=createdAt:desc --> get tasks ,sorted by the time they're created at in desc order.
 router.get("/tasks", auth, async (req, res) => {
   try {
+    console.log("get tasks route on");
     let tasks;
     //query options for searching/paginating/sorting on tasks.
     const options = {};
@@ -67,6 +69,7 @@ router.get("/tasks/:id", auth, async (req, res) => {
     return res.status(406).send("Task with that invalid id does not exist!");
 
   try {
+    console.log("Get task by id route on");
     const task = await Task.findOne({ _id, owner: req.user._id });
     if (!task) return res.status(404).send();
     res.send(task);
@@ -87,6 +90,7 @@ router.patch("/tasks/:id", auth, async (req, res) => {
   if (!isValidOperation) res.status(400).send({ error: "invalid updates!" });
   //.........................................................................
   try {
+    console.log("update task route on");
     const task = await Task.findOne({ _id, owner: req.user._id });
     //if a task with this id does not exist or another user who dose not login try to access someones tasks.
     if (!task) return res.status(404).send();
@@ -105,6 +109,7 @@ router.patch("/tasks/:id", auth, async (req, res) => {
 router.delete("/tasks/:id", auth, async (req, res) => {
   const _id = req.params.id;
   try {
+    console.log("Delete task route on");
     const task = await Task.findOneAndRemove({ _id, owner: req.user._id });
     if (!task) return res.status(404).send();
     res.send(task);
