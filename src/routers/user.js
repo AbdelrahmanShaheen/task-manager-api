@@ -57,6 +57,7 @@ router.post("/users/logoutAll", auth, async (req, res) => {
 //1.user Reading endpoints
 //1.1.Read Users api endpoint :
 router.get("/users/me", auth, async (req, res) => {
+  console.log(req.user);
   res.send(req.user);
 });
 
