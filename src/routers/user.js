@@ -10,6 +10,7 @@ const { sendWelcomeEmail, sendCancelationEmail } = require("../emails/account");
 //check credential for login api endpoint / Login
 router.post("/users/login", async (req, res) => {
   try {
+    console.log("Login route on");
     const user = await User.findByCredentials(
       req.body.email,
       req.body.password
@@ -24,6 +25,7 @@ router.post("/users/login", async (req, res) => {
 router.post("/users", async (req, res) => {
   const user = new User(req.body);
   try {
+    console.log("Signup route on");
     const token = await user.generateAuthToken();
     sendWelcomeEmail(user.name, user.email);
     res.status(201).send({ user, token });
@@ -35,6 +37,7 @@ router.post("/users", async (req, res) => {
 // user logout api
 router.post("/users/logout", auth, async (req, res) => {
   try {
+    console.log("Logout route on");
     const user = req.user;
     user.tokens = user.tokens.filter((token) => token.token !== req.token);
     await user.save();
@@ -46,6 +49,7 @@ router.post("/users/logout", auth, async (req, res) => {
 // user logout from all sessions
 router.post("/users/logoutAll", auth, async (req, res) => {
   try {
+    console.log("LogoutAll route on");
     const user = req.user;
     user.tokens = [];
     await user.save();
@@ -57,7 +61,7 @@ router.post("/users/logoutAll", auth, async (req, res) => {
 //1.user Reading endpoints
 //1.1.Read Users api endpoint :
 router.get("/users/me", auth, async (req, res) => {
-  console.log(req.user);
+  console.log("me route on");
   res.send(req.user);
 });
 
@@ -73,6 +77,7 @@ router.patch("/users/me", auth, async (req, res) => {
     return res.status(400).send({ error: "invalid updates!" });
   //..................................................................
   try {
+    console.log("update route on");
     const user = req.user;
     updates.forEach((update) => {
       user[update] = req.body[update];
@@ -86,6 +91,7 @@ router.patch("/users/me", auth, async (req, res) => {
 //1.Delete user by his id :
 router.delete("/users/me", auth, async (req, res) => {
   try {
+    console.log("Delete route on");
     await req.user.remove();
     sendCancelationEmail(req.user.email, req.user.name);
     res.send(req.user);
@@ -112,6 +118,7 @@ router.post(
   auth,
   upload.single("avatar"),
   async (req, res) => {
+    console.log("avatar route on");
     const buffer = await sharp(req.file.buffer)
       .resize({ width: 250, height: 250 })
       .png()
@@ -126,6 +133,7 @@ router.post(
 );
 // Deleting an avatar(image) from the current user :
 router.delete("/users/me/avatar", auth, async (req, res) => {
+  console.log("Delete avatar route on");
   req.user.avatar = undefined;
   await req.user.save();
   res.send();
@@ -134,6 +142,7 @@ router.delete("/users/me/avatar", auth, async (req, res) => {
 // Fetching/Getting an image/avatar by id :
 router.get("/users/:id/avatar", async (req, res) => {
   try {
+    console.log("get avatar by id route on");
     const id = req.params.id;
     const user = await User.findById(id);
     if (!user || !user.avatar) {
