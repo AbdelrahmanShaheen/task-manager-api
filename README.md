@@ -1,6 +1,46 @@
 # Task Manager API
 
-### Description
+<details>
+<summary>Table of content</summary>
+
+- [Task Manager API](#task-manager-api)
+  - [Description](#description)
+  - [Features ✨](#features-)
+  - [Authentication and Security](#authentication-and-security)
+  - [Project structure](#project-structure)
+  - [API Endpoints](#api-endpoints)
+      - [for users](#for-users)
+      - [for tasks](#for-tasks)
+  - [API Documentation](#api-documentation)
+    - [User Resource](#user-resource)
+      - [Create user](#create-user)
+      - [Login user](#login-user)
+      - [User logout](#user-logout)
+      - [User logout from all sessions](#user-logout-from-all-sessions)
+      - [Delete user](#delete-user)
+      - [User get profile info](#user-get-profile-info)
+      - [User update profile info](#user-update-profile-info)
+      - [choose one of these params to update the user](#choose-one-of-these-params-to-update-the-user)
+      - [User upload/update a profile picture](#user-uploadupdate-a-profile-picture)
+      - [Delete user profile picture](#delete-user-profile-picture)
+    - [Task Resource](#task-resource)
+      - [User create task](#user-create-task)
+      - [User get his tasks](#user-get-his-tasks)
+      - [choose any combination of these params to search for tasks](#choose-any-combination-of-these-params-to-search-for-tasks)
+    - [Get a single task by id](#get-a-single-task-by-id)
+    - [Update a single task by id](#update-a-single-task-by-id)
+      - [choose one of these params to update the task](#choose-one-of-these-params-to-update-the-task)
+    - [Delete single task by id](#delete-single-task-by-id)
+  - [Database Schema](#database-schema)
+  - [Installation 📥](#installation-)
+  - [How to use](#how-to-use)
+    - [Environment Variables](#environment-variables)
+  - [Running Tests 🧪](#running-tests-)
+    - [Tests Structure](#tests-structure)
+  - [Tech/Framework used 🧰](#techframework-used-)
+</details>
+
+## Description
 
 Back End Project- Task Manager App that manage user's tasks \
 Made using nodejs ,express ,mongodb and mongoose.
@@ -28,7 +68,7 @@ As a user you can do the following :
   - You can paginating tasks(creating pages of tasks that can be requested so you're not fetching everything all at once).
 - Get/Update/Delete a specific task by id.
 
-### Authentication and Security
+## Authentication and Security
 
 - Hash encryption of passwords and access management with JWT tokens.
 - Restricted user access to CRUD operations based on JWT tokens.
@@ -93,10 +133,17 @@ As a user you can do the following :
 
 ## API Documentation
 
-The API documentation is done using swagger. To access the documentation, go to the following URL
+Server URL
 
 ```
-http://localhost:PORT/api-docs
+https://task-manager-api-jfav.onrender.com/
+```
+
+Note: put the server url before each route.
+ex:
+
+```http
+https://task-manager-api-jfav.onrender.com/users/me
 ```
 
 ### User Resource
@@ -107,16 +154,23 @@ http://localhost:PORT/api-docs
   POST /users
 ```
 
-| Body       | Type     | Description                        |
+Note: when you send the body to the server convert it to JSON format.
+| Body | Type | Description |
 | :--------- | :------- | :--------------------------------- |
-| `name`     | `string` | **Required**. name of the user     |
-| `email`    | `string` | **Required**. email of the user    |
+| `name` | `string` | **Required**. name of the user |
+| `email` | `string` | **Required**. email of the user |
 | `password` | `string` | **Required**. password of the user |
+
+| Headers          | Type     | Description          |
+| :--------------- | :------- | :------------------- |
+| `"Content-Type"` | `string` | `"application/json"` |
 
 <details>
 <summary>
-Response
+Responses
 </summary>
+
+1- status code `201` with these data
 
 ```json
 {
@@ -133,6 +187,8 @@ Response
 }
 ```
 
+2- status code `400` when you provide an invalid data inside the body.
+
 </details>
 
 #### Login user
@@ -141,15 +197,22 @@ Response
   POST /users/login
 ```
 
-| Body       | Type     | Description                        |
+Note: when you send the body to the server convert it to JSON format.
+| Body | Type | Description |
 | :--------- | :------- | :--------------------------------- |
-| `email`    | `string` | **Required**. email of the user    |
+| `email` | `string` | **Required**. email of the user |
 | `password` | `string` | **Required**. password of the user |
+
+| Headers          | Type     | Description          |
+| :--------------- | :------- | :------------------- |
+| `"Content-Type"` | `string` | `"application/json"` |
 
 <details>
 <summary>
-Response
+Responses
 </summary>
+
+1- status code `200` with these data
 
 ```json
 {
@@ -166,6 +229,8 @@ Response
 }
 ```
 
+2- status code `400` when you provide an invalid data inside the body(like an incorrect user name or password).
+
 </details>
 
 #### User logout
@@ -180,10 +245,12 @@ Response
 
 <details>
 <summary>
-Response
+Responses
 </summary>
 
-there is no response ,just a status code of `200 ok`
+1- status code of `200 ok`
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
 
 </details>
 
@@ -199,10 +266,12 @@ there is no response ,just a status code of `200 ok`
 
 <details>
 <summary>
-Response
+Responses
 </summary>
 
-there is no response ,just a status code of `200 ok`
+1- status code of `200 ok`
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
 
 </details>
 
@@ -218,8 +287,10 @@ there is no response ,just a status code of `200 ok`
 
 <details>
 <summary>
-Response
+Responses
 </summary>
+
+1- status code `200` with these data
 
 ```json
 {
@@ -232,6 +303,9 @@ Response
   "__v": 5
 }
 ```
+
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
 
 </details>
 
@@ -247,8 +321,10 @@ Response
 
 <details>
 <summary>
-Response
+Responses
 </summary>
+
+1- status code `200` with these data
 
 ```json
 {
@@ -262,6 +338,8 @@ Response
 }
 ```
 
+2- status code of `401` Unauthorized (when you provide an invalid token)
+
 </details>
 
 #### User update profile info
@@ -270,23 +348,26 @@ Response
   PATCH /users/me
 ```
 
-| Headers         | Type     | Description                             |
-| :-------------- | :------- | :-------------------------------------- |
-| `Authorization` | `string` | **Required**. Bearer token of the user. |
+| Headers          | Type     | Description                             |
+| :--------------- | :------- | :-------------------------------------- |
+| `Authorization`  | `string` | **Required**. Bearer token of the user. |
+| `"Content-Type"` | `string` | `"application/json"`                    |
 
 #### choose one of these params to update the user
 
 | Body       | Type     | Description          |
 | :--------- | :------- | :------------------- |
 | `name`     | `string` | name of user         |
-| `age`      | `string` | age of the user      |
+| `age`      | `Number` | age of the user      |
 | `email`    | `string` | email of user        |
 | `password` | `string` | password of the user |
 
 <details>
 <summary>
-Response
+Responses
 </summary>
+
+1- status code `200` with these data
 
 ```json
 {
@@ -299,6 +380,15 @@ Response
   "__v": 0
 }
 ```
+
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `400` when you try to update something that does not exist in user schema,it's also send this data
+
+```json
+{ "error": "invalid updates!" }
+```
+
+4- status code of `400` when you try to do an invalid updates ,ex: update the age to a negative number.
 
 </details>
 
@@ -318,10 +408,12 @@ Response
 
 <details>
 <summary>
-Response
+Responses
 </summary>
 
-there is no response ,just a status code of `200 ok`
+1- status code of `200 ok`
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `400` when you try to upload a large image(more than 1MB) or when the image is not in this type (jpg|jpeg|png).
 
 </details>
 
@@ -337,10 +429,11 @@ there is no response ,just a status code of `200 ok`
 
 <details>
 <summary>
-Response
+Responses
 </summary>
 
-there is no response ,just a status code of `200 ok`
+1- status code of `200 ok`
+2- status code of `401` Unauthorized (when you provide an invalid token)
 
 </details>
 
@@ -352,9 +445,10 @@ there is no response ,just a status code of `200 ok`
   POST /tasks
 ```
 
-| Headers         | Type     | Description                             |
-| :-------------- | :------- | :-------------------------------------- |
-| `Authorization` | `string` | **Required**. Bearer token of the user. |
+| Headers          | Type     | Description                             |
+| :--------------- | :------- | :-------------------------------------- |
+| `Authorization`  | `string` | **Required**. Bearer token of the user. |
+| `"Content-Type"` | `string` | `"application/json"`                    |
 
 | Body        | Type      | Description                           |
 | :---------- | :-------- | :------------------------------------ |
@@ -363,8 +457,10 @@ there is no response ,just a status code of `200 ok`
 
 <details>
 <summary>
-Response
+Responses
 </summary>
+
+1- status code of `201` with the following data :
 
 ```json
 {
@@ -377,6 +473,9 @@ Response
   "__v": 0
 }
 ```
+
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `400` when you provide an invalid task data
 
 </details>
 
@@ -408,8 +507,10 @@ GET /tasks?completed=true
 <details>
 
 <summary>
-Response
+Responses
 </summary>
+
+1- status code of `200 ok` with these data :
 
 ```json
 [
@@ -433,6 +534,9 @@ Response
   }
 ]
 ```
+
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
 
 </details>
 
@@ -445,8 +549,10 @@ GET /tasks?completed=false
 <details>
 
 <summary>
-Response
+Responses
 </summary>
+
+1- status code of `200 ok` with these data :
 
 ```json
 [
@@ -479,6 +585,9 @@ Response
   }
 ]
 ```
+
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
 
 </details>
 
@@ -491,8 +600,10 @@ GET /tasks?limit=3&skip=2
 <details>
 
 <summary>
-Response
+Responses
 </summary>
+
+1- status code of `200 ok` with these data :
 
 ```json
 [
@@ -526,6 +637,9 @@ Response
 ]
 ```
 
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
+
 </details>
 
 Example URL: Get all tasks in desc order of their creation time.
@@ -537,8 +651,10 @@ GET /tasks?sortBy=createdAt:desc
 <details>
 
 <summary>
-Response
+Responses
 </summary>
+
+1- status code of `200 ok` with these data :
 
 ```json
 [
@@ -589,6 +705,9 @@ Response
   }
 ]
 ```
+
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
 
 </details>
 
@@ -609,8 +728,10 @@ GET /tasks/:id
 <details>
 
 <summary>
-Response
+Responses
 </summary>
+
+1- status code of `200 ok` with these data :
 
 ```json
 {
@@ -624,6 +745,11 @@ Response
 }
 ```
 
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
+4- status code of `406` when you providing an invalid id for the task
+5- status code of `404` when you providing a valid id for the task but task with this id does not exist.
+
 </details>
 
 ### Update a single task by id
@@ -632,9 +758,10 @@ Response
   PATCH /tasks/:id
 ```
 
-| Headers         | Type     | Description                             |
-| :-------------- | :------- | :-------------------------------------- |
-| `Authorization` | `string` | **Required**. Bearer token of the user. |
+| Headers          | Type     | Description                             |
+| :--------------- | :------- | :-------------------------------------- |
+| `Authorization`  | `string` | **Required**. Bearer token of the user. |
+| `"Content-Type"` | `string` | `"application/json"`                    |
 
 | Parameter | Type     | Description                   |
 | :-------- | :------- | :---------------------------- |
@@ -649,8 +776,10 @@ Response
 
 <details>
 <summary>
-Response
+Responses
 </summary>
+
+1- status code of `200` with these data :
 
 ```json
 {
@@ -663,6 +792,16 @@ Response
   "__v": 0
 }
 ```
+
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `400` when you try to update something that does not exist in task schema,it's also send this data
+
+```json
+{ "error": "invalid updates!" }
+```
+
+4- status code of `400` when you try to do an invalid updates ,ex: update the completed property to string value not to boolean value
+5- status code of `404` when you providing a valid id for the task but task with this id does not exist.
 
 </details>
 
@@ -682,8 +821,10 @@ Response
 
 <details>
 <summary>
-Response
+Responses
 </summary>
+
+1- status code of `200` with these data :
 
 ```json
 {
@@ -696,6 +837,10 @@ Response
   "__v": 0
 }
 ```
+
+2- status code of `401` Unauthorized (when you provide an invalid token)
+3- status code of `500` Internal Server Error
+4- status code of `404` when you providing a valid id for the task but task with this id does not exist.
 
 </details>
 
@@ -757,8 +902,8 @@ The testing is done using `jest`. To run the tests, run the following command
 ```bash
 > npm run test
 ```
-![ss1](https://user-images.githubusercontent.com/77184432/213866623-9fa50c5b-641b-4485-af36-df8400ddd533.png)
 
+![ss1](https://user-images.githubusercontent.com/77184432/213866623-9fa50c5b-641b-4485-af36-df8400ddd533.png)
 
 ### Tests Structure
 
@@ -796,11 +941,3 @@ The testing is done using `jest`. To run the tests, run the following command
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 - [Postman](https://www.postman.com/)
 - [VSCode](https://code.visualstudio.com/)
-
-## To do
-
-- [x] Provide Sorting, Pagination, and Filtering on the data.
-- [x] Set up email notifications using a nodemailer service.
-- [x] Allow users to upload a profile picture.
-- [x] Do automation testing using Jest framework
-- [ ] Add swagger UI
