@@ -3,7 +3,6 @@
 <details>
 <summary>Table of content</summary>
 
-- [Task Manager API](#task-manager-api)
   - [Description](#description)
   - [Features ✨](#features-)
   - [Authentication and Security](#authentication-and-security)
@@ -34,7 +33,6 @@
   - [Database Schema](#database-schema)
   - [Installation 📥](#installation-)
   - [How to use](#how-to-use)
-    - [Environment Variables](#environment-variables)
   - [Running Tests 🧪](#running-tests-)
     - [Tests Structure](#tests-structure)
   - [Tech/Framework used 🧰](#techframework-used-)
