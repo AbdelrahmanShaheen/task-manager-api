@@ -37,7 +37,7 @@
 
 ## Description
 
-Back End Project- Task Manager App that manage user's tasks \
+Back End Project- Task Manager App that manage user's tasks, As a user you can signup ,login and create tasks. \
 Made using nodejs ,express ,mongodb and mongoose.
 
 ## Features ✨
