@@ -37,8 +37,7 @@
 
 ## Description
 
-Back End Project- Task Manager App that manage user's tasks, As a user you can signup ,login and create tasks. \
-Made using nodejs ,express ,mongodb and mongoose.
+The task-manager-API is a backend solution for managing tasks. It provides a comprehensive suite of APIs for users to sign up, log in, create tasks, delete tasks, search for tasks, and perform various CRUD operations. It has been developed using Node.js, Express, MongoDB, and Mongoose, ensuring stability, security, and scalability. 
 
 ## Features ✨
 
