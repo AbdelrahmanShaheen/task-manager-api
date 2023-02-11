@@ -244,7 +244,7 @@ Responses
 
 1- status code of `200 ok` \
 2- status code of `401` Unauthorized (when you provide an invalid token) \
-3- status code of `500` Internal Server Error \
+3- status code of `500` Internal Server Error 
 
 </details>
 
@@ -263,8 +263,8 @@ Responses
 Responses
 </summary>
 
-1- status code of `200 ok`
-2- status code of `401` Unauthorized (when you provide an invalid token)
+1- status code of `200 ok` \
+2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `500` Internal Server Error
 
 </details>
@@ -298,7 +298,7 @@ Responses
 }
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
+2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `500` Internal Server Error
 
 </details>
@@ -375,8 +375,8 @@ Responses
 }
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
-3- status code of `400` when you try to update something that does not exist in user schema,it's also send this data
+2- status code of `401` Unauthorized (when you provide an invalid token) \
+3- status code of `400` when you try to update something that does not exist in user schema,it's also send this data \
 
 ```json
 { "error": "invalid updates!" }
@@ -405,8 +405,8 @@ Responses
 Responses
 </summary>
 
-1- status code of `200 ok`
-2- status code of `401` Unauthorized (when you provide an invalid token)
+1- status code of `200 ok` \
+2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `400` when you try to upload a large image(more than 1MB) or when the image is not in this type (jpg|jpeg|png).
 
 </details>
@@ -426,7 +426,7 @@ Responses
 Responses
 </summary>
 
-1- status code of `200 ok`
+1- status code of `200 ok` \
 2- status code of `401` Unauthorized (when you provide an invalid token)
 
 </details>
@@ -454,7 +454,7 @@ Responses
 Responses
 </summary>
 
-1- status code of `201` with the following data :
+1- status code of `201` with the following data : 
 
 ```json
 {
@@ -468,7 +468,7 @@ Responses
 }
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
+2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `400` when you provide an invalid task data
 
 </details>
@@ -529,7 +529,7 @@ Responses
 ]
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
+2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `500` Internal Server Error
 
 </details>
@@ -580,7 +580,7 @@ Responses
 ]
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
+2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `500` Internal Server Error
 
 </details>
@@ -631,7 +631,7 @@ Responses
 ]
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
+2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `500` Internal Server Error
 
 </details>
@@ -700,7 +700,7 @@ Responses
 ]
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
+2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `500` Internal Server Error
 
 </details>
@@ -739,9 +739,9 @@ Responses
 }
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
-3- status code of `500` Internal Server Error
-4- status code of `406` when you providing an invalid id for the task
+2- status code of `401` Unauthorized (when you provide an invalid token) \
+3- status code of `500` Internal Server Error \ 
+4- status code of `406` when you providing an invalid id for the task \
 5- status code of `404` when you providing a valid id for the task but task with this id does not exist.
 
 </details>
@@ -787,14 +787,14 @@ Responses
 }
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
-3- status code of `400` when you try to update something that does not exist in task schema,it's also send this data
+2- status code of `401` Unauthorized (when you provide an invalid token) \
+3- status code of `400` when you try to update something that does not exist in task schema,it's also send this data 
 
 ```json
 { "error": "invalid updates!" }
 ```
 
-4- status code of `400` when you try to do an invalid updates ,ex: update the completed property to string value not to boolean value
+4- status code of `400` when you try to do an invalid updates ,ex: update the completed property to string value not to boolean value \
 5- status code of `404` when you providing a valid id for the task but task with this id does not exist.
 
 </details>
@@ -832,8 +832,8 @@ Responses
 }
 ```
 
-2- status code of `401` Unauthorized (when you provide an invalid token)
-3- status code of `500` Internal Server Error
+2- status code of `401` Unauthorized (when you provide an invalid token) \
+3- status code of `500` Internal Server Error \
 4- status code of `404` when you providing a valid id for the task but task with this id does not exist.
 
 </details>
