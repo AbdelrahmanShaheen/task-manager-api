@@ -242,9 +242,9 @@ Responses
 Responses
 </summary>
 
-1- status code of `200 ok`
-2- status code of `401` Unauthorized (when you provide an invalid token)
-3- status code of `500` Internal Server Error
+1- status code of `200 ok` \
+2- status code of `401` Unauthorized (when you provide an invalid token) \
+3- status code of `500` Internal Server Error \
 
 </details>
 
