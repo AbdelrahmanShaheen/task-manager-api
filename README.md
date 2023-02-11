@@ -24,9 +24,9 @@
     - [Task Resource](#task-resource)
       - [User create task](#user-create-task)
       - [User get his tasks](#user-get-his-tasks)
-    - [Get a single task by id](#get-a-single-task-by-id)
-    - [Update a single task by id](#update-a-single-task-by-id)
-    - [Delete single task by id](#delete-single-task-by-id)
+      - [Get a single task by id](#get-a-single-task-by-id)
+      - [Update a single task by id](#update-a-single-task-by-id)
+      - [Delete single task by id](#delete-single-task-by-id)
   - [Database Schema](#database-schema)
   - [Installation 📥](#installation-)
   - [How to use](#how-to-use)
@@ -740,8 +740,8 @@ Responses
 ```
 
 2- status code of `401` Unauthorized (when you provide an invalid token) \
-3- status code of `500` Internal Server Error \ 
-4- status code of `406` when you providing an invalid id for the task
+3- status code of `500` Internal Server Error  \ 
+4- status code of `406` when you providing an invalid id for the task \
 5- status code of `404` when you providing a valid id for the task but task with this id does not exist.
 
 </details>
