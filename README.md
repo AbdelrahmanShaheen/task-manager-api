@@ -376,7 +376,7 @@ Responses
 ```
 
 2- status code of `401` Unauthorized (when you provide an invalid token) \
-3- status code of `400` when you try to update something that does not exist in user schema,it's also send this data \
+3- status code of `400` when you try to update something that does not exist in user schema,it's also send this data 
 
 ```json
 { "error": "invalid updates!" }
