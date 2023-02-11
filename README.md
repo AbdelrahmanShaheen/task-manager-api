@@ -741,7 +741,7 @@ Responses
 
 2- status code of `401` Unauthorized (when you provide an invalid token) \
 3- status code of `500` Internal Server Error \ 
-4- status code of `406` when you providing an invalid id for the task \
+4- status code of `406` when you providing an invalid id for the task
 5- status code of `404` when you providing a valid id for the task but task with this id does not exist.
 
 </details>
